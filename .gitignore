@@ -1,0 +1,12 @@
+node_modules/
+__MACOSX/
+log/
+.monitor
+config/env/env.json
+Makefile
+.DS_Store
+.env
+*.log
+*.gz
+.vscode/
+node_modules

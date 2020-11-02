@@ -1,0 +1,27 @@
+[
+    {
+        "_id": "USER1",
+        "name": "Ramu",
+        "contacts": [
+            {
+                "userId": "USER3",
+                "amount": -100
+            }
+        ]
+    },
+    {
+        "_id": "USER2",
+        "name": "Ramesh",
+        "contacts": []
+    },
+    {
+        "_id": "USER3",
+        "name": "Kumar",
+        "contacts": [
+            {
+                "userId": "USER1",
+                "amount": 100
+            }
+        ]
+    }
+]
