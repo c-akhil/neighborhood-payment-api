@@ -206,12 +206,7 @@ User.statics = {
                 return;
             }
             let user = await UserModal.aggregate([
-                { $match: { _id: "USER1" } },
-                {
-                    $addFields: {
-                        totalAmount: { $sum: "$contacts.amount" }
-                    }
-                },
+                { $match: { _id: userId } },
                 { $unwind: "$contacts" },
                 {
                     $lookup: {
@@ -235,7 +230,12 @@ User.statics = {
                             $addToSet: "$contacts"
                         }
                     }
-                }
+                },
+                   {
+                    $addFields: {
+                        totalAmount: { $sum: "$contacts.amount" }
+                    }
+                },
             ]);
             res.status(200).send({ statusCode: 200, 'statusMessage': 'Success', user: user[0] });
         } catch (error) {
